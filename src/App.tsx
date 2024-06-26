@@ -15,6 +15,7 @@ import Settings from './pages/Settings';
 import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
+import DasarHukum from './pages/DasarHukum/Index';
 
 // Admin
 import Admin from './pages/Dashboard/Admin';
@@ -43,6 +44,15 @@ function App() {
             <>
               <PageTitle title="eCommerce Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template" />
               <Pegawai />
+            </>
+          }
+        />
+        <Route
+          path="/dasar-hukum"
+          element={
+            <>
+              <PageTitle title="eCommerce Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <DasarHukum />
             </>
           }
         />
