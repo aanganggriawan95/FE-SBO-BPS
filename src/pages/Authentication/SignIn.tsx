@@ -1,7 +1,9 @@
 import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const SignIn: React.FC = () => {
+  const [role, setRole] = useState('admin');
   const heandleDrop = () => {
     const dropdown = document.getElementById('dropdown');
     dropdown?.classList.add('opacity-100', 'mt-[24px]');
@@ -62,6 +64,30 @@ const SignIn: React.FC = () => {
         </div>
       </nav>
       <div className="w-full md:w-1/2 mx-auto p-4 sm:p-12.5 xl:p-17.5 h-auto mt-10 md:mt-0">
+        <div className="flex flex-col justify-center  items-center">
+          <div className="flex items-center justify-center gap-4 pb-4 w-[200px]">
+            <button
+              className={`border w-24 h-10 flex items-center justify-center rounded-full cursor-pointer transition-all ${
+                role === 'admin'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-200 text-gray-700'
+              }`}
+              onClick={() => setRole('admin')}
+            >
+              Admin
+            </button>
+            <button
+              className={` border w-24 h-10 flex items-center justify-center rounded-full cursor-pointer transition-all ${
+                role === 'pegawai'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-200 text-gray-700'
+              }`}
+              onClick={() => setRole('pegawai')}
+            >
+              Pegawai
+            </button>
+          </div>
+        </div>
         <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
           Masuk
         </h2>
